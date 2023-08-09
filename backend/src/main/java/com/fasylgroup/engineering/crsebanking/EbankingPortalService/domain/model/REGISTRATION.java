@@ -1,5 +1,6 @@
 package com.fasylgroup.engineering.crsebanking.EbankingPortalService.domain.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -57,6 +58,7 @@ public class REGISTRATION {
     public String BIRTH_PLACE;
     public Integer ACCT_TYPE;
     public Integer FIN_PROF;
+    @Column(name = "MLIMIT")
     public Double LIMIT;
     public String GENERATE;
 }

@@ -1,10 +1,11 @@
 package com.fasylgroup.engineering.crsebanking.EbankingPortalService.domain.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 /**
@@ -24,12 +25,17 @@ public class UMTB_ADD_USERINFO {
     public String BRANCH;
     public String CUST_ID;
     public String FULLNAME;
+    @Column(name = "MLIMIT")
     public String LIMIT;
-    public Date DATE_CREATED;
-    public Date DATE_MODIFIED;
-    public Date DATE_ACTIVATED;
+    public Timestamp DATE_CREATED;
+    public Timestamp DATE_MODIFIED;
+    public Timestamp DATE_ACTIVATED;
     public String CREATED_BY;
     public String MODIFIED_BY;
     public String ACTIVATED_BY;
     public String USD_ACCOUNT;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "userInfo")
+    private ORA_ASPNET_USERS user;
 }

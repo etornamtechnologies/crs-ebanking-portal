@@ -1,5 +1,6 @@
 package com.fasylgroup.engineering.crsebanking.EbankingPortalService.domain.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -41,6 +42,7 @@ public class CSVW_EMP_REG {
     public String FLEX_ACC_BRANCH;
     public Integer ACCT_TYPE;
     public Integer FIN_PROF;
+    @Column(name = "MLIMIT")
     public Integer LIMIT;
     public String ID_VALUE;
     public String GENERATE;
